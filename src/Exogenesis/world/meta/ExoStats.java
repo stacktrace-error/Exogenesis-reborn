@@ -34,6 +34,8 @@ public class ExoStats{
 
     public static void addTypeStatsUnit(){
         Vars.content.units().each(unit -> {
+            unit.checkStats();
+
             //adds the multiplier table to stats of units that have any
             if(TypeMultipliers.getMultipliers(unit) != null){
                 unit.stats.add(typeDamage, damageTypes(TypeMultipliers.getMultipliers(unit)));
